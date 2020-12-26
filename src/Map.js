@@ -27,7 +27,7 @@ export class Map extends Component {
   render() {
     return (
       <div>
-        <div ref={el => this.mapContainer = el} className="mapContainer" />
+        <div ref={elm => this.mapContainer = elm} className="mapContainer" />
       </div>
     )
   }

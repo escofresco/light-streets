@@ -11,12 +11,19 @@ export default class AddressForm extends Component {
     const options = {
       appId: process.env.REACT_APP_ALGOLIA_APP_ID,
       apiKey: process.env.REACT_APP_ALGOLIA_PLACES_API_KEY,
-      container: '#addressInput',
+      container: '#address-input',
     };
     places(options);
   }
 
   render() {
-    return <input id="addressInput"/>;
+    return (
+      <Form>
+        <Row>
+          <Col>
+            <input type="search" onChange={(e) => console.log(e.suggest)} id="address-input" placeholder="Where the decorations at?" />
+          </Col>
+        </Row>
+      </Form>);
   }
 }
