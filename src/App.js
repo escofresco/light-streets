@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Map publicKey="pk.eyJ1IjoiZXNjb2ZyZXNjbyIsImEiOiJjanIybzM1ZzUwMm56NDNyMnE2OHo4ZjJkIn0.m58inJeAA0EUbAR9zUYHGA" />
+        <Map publicKey={process.env.REACT_APP_MAPBOX_PUBLIC_KEY} />
 
-<p>This is what it is</p>
+        <p>This is what it is</p>
       </header>
 
     </div>

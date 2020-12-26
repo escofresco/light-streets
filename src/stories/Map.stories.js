@@ -7,7 +7,8 @@ export default {
   component: Map,
 };
 
-const Template = (args) => <Map publicKey="pk.eyJ1IjoiZXNjb2ZyZXNjbyIsImEiOiJjanIybzM1ZzUwMm56NDNyMnE2OHo4ZjJkIn0.m58inJeAA0EUbAR9zUYHGA" {...args} />;
+const Template = (args) => <Map
+  publicKey={process.env.REACT_APP_MAPBOX_PUBLIC_KEY} {...args} />;
 
 export const LargeRiversZoom = Template.bind({});
 LargeRiversZoom.args = {
