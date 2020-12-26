@@ -12,6 +12,7 @@ export class Map extends Component {
   }
 
   componentDidMount() {
+    mapboxgl.accessToken = process.env.MAPBOX_PUBLIC_TOKEN;
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',
