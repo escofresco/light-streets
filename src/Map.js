@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+
 import './map.css';
+
 export class Map extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ export class Map extends Component {
 
   componentDidMount() {
     mapboxgl.accessToken = this.props.publicKey;
+
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',

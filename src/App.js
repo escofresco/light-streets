@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Map } from './Map.js'
 import logo from './logo.svg';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
