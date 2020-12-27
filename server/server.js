@@ -13,7 +13,7 @@ function checkHttps(request, response, next) {
   }
 }
 
-app.all("*", checkHttps);
+if (process.env.NODE_ENV == "production") app.all("*", checkHttps);
 
 // A test route to make sure the server is up.
 app.get("/api/ping", (request, response) => {
@@ -41,4 +41,9 @@ if (process.env.NODE_ENV === "production") {
 // Start the listener!
 const listener = app.listen(port, () => {
   console.log("❇️ Express server is running on port", listener.address().port);
+});
+
+// Handle an address submission
+app.post("/api/addRess", (request, response) => {
+
 });
