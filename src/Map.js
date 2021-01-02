@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import mapboxgl from 'mapbox-gl';
-
-import './map.css';
-
+import React, { Component } from "react";
+import mapboxgl from "mapbox-gl";
+import "./map.css";
 export class Map extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +12,10 @@ export class Map extends Component {
   }
 
   componentDidMount() {
-    mapboxgl.accessToken = this.props.publicKey;
-
+    mapboxgl.accessToken = "pk.eyJ1IjoiZXNjb2ZyZXNjbyIsImEiOiJjanIybzM1ZzUwMm56NDNyMnE2OHo4ZjJkIn0.m58inJeAA0EUbAR9zUYHGA";
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: "mapbox://styles/mapbox/streets-v11",
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
     });
@@ -27,8 +24,8 @@ export class Map extends Component {
   render() {
     return (
       <div>
-        <div ref={elm => this.mapContainer = elm} className="mapContainer" />
+        <div ref={el => (this.mapContainer = el)} className="mapContainer" />
       </div>
-    )
+    );
   }
-};
+}

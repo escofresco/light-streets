@@ -1,18 +1,16 @@
 import React from 'react';
-
-import { Map } from './Map.js'
 import logo from './logo.svg';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Map } from './Map.js'
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Map publicKey={process.env.REACT_APP_MAPBOX_PUBLIC_KEY} />
+      <Map />
 
-        <p>This is what it is</p>
+<p>This is what it is</p>
       </header>
 
     </div>
