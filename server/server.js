@@ -1,12 +1,15 @@
 const express = require("express");
 const path = require("path");
+const helpers = require("./helpers");
 
 const app = express();
 
 // PWAs want HTTPS!
 function checkHttps(request, response, next) {
+
   // Check the protocol — if http, redirect to https.
-  if (request.get("X-Forwarded-Proto").indexOf("https") != -1) {
+  if (request.get("X-Forwarded-Proto") == undefined ||
+      request.get("X-Forwarded-Proto").indexOf("https") != -1) {
     return next();
   } else {
     response.redirect("https://" + request.hostname + request.url);
@@ -19,6 +22,12 @@ app.all("*", checkHttps);
 app.get("/api/ping", (request, response) => {
   console.log("❇️ Received GET request to /api/ping");
   response.send("pong!");
+});
+
+app.get("/api/data", (request, response) => {
+  console.log("❇️ Received GET request to /api/data");
+  helpers.run();
+  response.send("data");
 });
 
 // Express port-switching logic
